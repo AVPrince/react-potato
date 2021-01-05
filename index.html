@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React Potato</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="root"></div>
+    <!--React-->
+<script crossorigin src="https://unpkg.com/react@16/umd/react.development.js" ></script>
+<!--React Dom-->
+<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" ></script>
+<!--Babel-->
+<script crossorigin src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+<script type="text/babel">
+    function City(props) {
+        return (
+            <div className="city"> 
+                <img src={props.image} alt="cityscape"/>
+                <h1>{props.name} established in {props.year}</h1>
+            </div>
+        )
+    }
+
+    let element = (
+        <div>
+            <City
+                image = "https://upload.wikimedia.org/wikipedia/commons/4/47/New_york_times_square-terabass.jpg"
+                name="New York City"
+                year="1624"
+            />
+            <City
+                image="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Los_Angeles_with_Mount_Baldy.jpg/800px-Los_Angeles_with_Mount_Baldy.jpg"
+                name="Los Angeles"
+                year="1781"
+            />
+            <City
+                image="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Minneapolis_skyline_from_Prospect_Park_Water_Tower%2C_July_2014.jpg/900px-Minneapolis_skyline_from_Prospect_Park_Water_Tower%2C_July_2014.jpg"
+                name="Minneapolis"
+                year="1856"
+            />
+                
+        </div>
+    )
+
+    ReactDOM.render (
+        element, 
+        document.getElementById("root")
+    )
+
+</script>
+
+</body>
+</html>
